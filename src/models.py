@@ -73,7 +73,7 @@ class Person(db.Model):
         return {
             "id": self.id,
             "name": self.name,
-            "heigth" :self.height,
+            "height" :self.height,
             "eye_color": self.eye_color,
             "hair_color": self.hair_color,
 
@@ -133,22 +133,22 @@ class Favourite(db.Model):
              return {
             "id": self.id,
             "user_id": self.user_id,
-            "info_person": person.serialize(),               
+            "info": person.serialize(),               
 
         }
         elif self.planet_id is not None:
              return {
             "id": self.id,
             "user_id": self.user_id,
-            "info_planet": planet.serialize(),               
+            "info": planet.serialize(),               
 
         }
-        elif self.vehicle_id_id is not None:
+        elif self.vehicle_id is not None:
 
             return {
             "id": self.id,
             "user_id": self.user_id,
-            "info_vehicle": vehicle.serialize(),
+            "info": vehicle.serialize(),
              # do not serialize the password, its a security breach
         }      
     
